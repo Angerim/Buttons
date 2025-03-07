@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
     private Button btn1, btn2, btn3, btn4, btn5, btn6,
             btn7, btn8, btn9, btn0, btnProcent, btnPlus,
             btnMinus, btnDelenie, btnRavno, btnDEL, btnX;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         btnMinus.setOnClickListener(v -> setOperator("-"));
         btnX.setOnClickListener(v -> setOperator("*"));
         btnDelenie.setOnClickListener(v -> setOperator("/"));
+        btnProcent.setOnClickListener(v -> setOperator("%"));
 
         btnRavno.setOnClickListener(v -> calculateResult());
 
@@ -113,10 +115,14 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     break;
+                case "%":
+                    result = num1%num2;
+                    //чел попозже вернись сюда и сделай норм калькик что за позорище
             }
 
             tv_San.setText(String.valueOf(result));
             operator = "";
         }
     }
+
 }
